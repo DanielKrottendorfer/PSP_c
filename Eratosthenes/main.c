@@ -16,7 +16,7 @@ int isPrime(int number)
 int main(void)
 {
 
-    printf(": ");
+    printf(": 123 ");
 
     int n = 0;
 
@@ -31,34 +31,36 @@ int main(void)
         num[i] = i;
     }
 
-    for(int i=2 ; i<n ; i++){
+    for (int i = 2; i < n; i++)
+    {
 
         //printf("%d %d \n",i,num[i]);
-        if(num[i]==0)
+        if (num[i] == 0)
             continue;
 
-        if(isPrime(num[i]))
+        if (isPrime(num[i]))
         {
-            for(int y=i*i ; y<n ; y*=y){
+            for (int y = i * i; y < n; y *= y)
+            {
                 //printf("%d %d \n",y,num[y]);
                 num[y] = 0;
             }
-        }else{
+        }
+        else
+        {
             num[i] = 0;
         }
-
     }
 
     for (int i = 2, y = 0; i < n; i++)
     {
-        if(num[i]==0)
+        if (num[i] == 0)
             continue;
-
 
         if (y == 10)
         {
             printf("\n");
-            y=0;
+            y = 0;
         }
         y++;
         printf("%d ", num[i]);
